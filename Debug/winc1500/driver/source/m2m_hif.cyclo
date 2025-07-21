@@ -1,0 +1,16 @@
+../winc1500/driver/source/m2m_hif.c:85:13:isr	1
+../winc1500/driver/source/m2m_hif.c:95:14:hif_set_rx_done	2
+../winc1500/driver/source/m2m_hif.c:131:13:m2m_hif_cb	1
+../winc1500/driver/source/m2m_hif.c:142:7:hif_chip_wake	5
+../winc1500/driver/source/m2m_hif.c:179:6:hif_set_sleep_mode	1
+../winc1500/driver/source/m2m_hif.c:194:7:hif_get_sleep_mode	1
+../winc1500/driver/source/m2m_hif.c:205:7:hif_chip_sleep_sc	2
+../winc1500/driver/source/m2m_hif.c:219:7:hif_chip_sleep	4
+../winc1500/driver/source/m2m_hif.c:250:7:hif_init	1
+../winc1500/driver/source/m2m_hif.c:264:7:hif_deinit	1
+../winc1500/driver/source/m2m_hif.c:293:7:hif_send	18
+../winc1500/driver/source/m2m_hif.c:434:14:hif_isr	22
+../winc1500/driver/source/m2m_hif.c:570:6:hif_yield	1
+../winc1500/driver/source/m2m_hif.c:581:7:hif_handle_isr	5
+../winc1500/driver/source/m2m_hif.c:639:7:hif_receive	11
+../winc1500/driver/source/m2m_hif.c:695:7:hif_register_cb	8

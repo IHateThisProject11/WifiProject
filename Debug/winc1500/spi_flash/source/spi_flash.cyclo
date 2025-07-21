@@ -1,0 +1,16 @@
+../winc1500/spi_flash/source/spi_flash.c:84:14:spi_flash_read_status_reg	4
+../winc1500/spi_flash/source/spi_flash.c:217:14:spi_flash_load_to_cortus_mem	3
+../winc1500/spi_flash/source/spi_flash.c:255:14:spi_flash_sector_erase	3
+../winc1500/spi_flash/source/spi_flash.c:289:14:spi_flash_write_enable	3
+../winc1500/spi_flash/source/spi_flash.c:319:14:spi_flash_write_disable	3
+../winc1500/spi_flash/source/spi_flash.c:354:14:spi_flash_page_program	3
+../winc1500/spi_flash/source/spi_flash.c:393:14:spi_flash_read_internal	2
+../winc1500/spi_flash/source/spi_flash.c:417:14:spi_flash_pp	3
+../winc1500/spi_flash/source/spi_flash.c:443:15:spi_flash_rdid	5
+../winc1500/spi_flash/source/spi_flash.c:492:13:spi_flash_enter_low_power_mode	2
+../winc1500/spi_flash/source/spi_flash.c:507:13:spi_flash_leave_low_power_mode	2
+../winc1500/spi_flash/source/spi_flash.c:529:7:spi_flash_enable	4
+../winc1500/spi_flash/source/spi_flash.c:570:7:spi_flash_read	4
+../winc1500/spi_flash/source/spi_flash.c:604:7:spi_flash_write	8
+../winc1500/spi_flash/source/spi_flash.c:681:7:spi_flash_erase	4
+../winc1500/spi_flash/source/spi_flash.c:719:8:spi_flash_get_size	4

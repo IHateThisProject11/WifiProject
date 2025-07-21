@@ -5,7 +5,8 @@
 /* Minimal stub to satisfy WINC1500 v19.7.x host driver on ARM GCC */
 
 #include "cmsis_compiler.h"    /* CMSIS: __INLINE, __ASM, __WEAK, etc. */
-
+#include <stddef.h>
+#include <stdbool.h>
 /* Ensure __INLINE is defined for driver code */
 #ifndef __INLINE
 #define __INLINE static inline

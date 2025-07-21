@@ -54,35 +54,28 @@
  */
 static void init_chip_pins(void)
 {
-    /* Initialize WiFi GPIO pins */
-    GPIO_InitTypeDef GPIO_InitStruct;
+    GPIO_InitTypeDef GPIO_InitStruct = {0};
 
-    /* Configure GPIO pins : PA1 PA2 PA0 - we are using ST GPIO definitions for winc1500 */
-    GPIO_InitStruct.Pin   = CONF_WINC_PIN_RESET;
+    /* ---- RESET (active low) ---- */
+    GPIO_InitStruct.Pin   = RESET_WINC_Pin;
     GPIO_InitStruct.Mode  = GPIO_MODE_OUTPUT_PP;
-    GPIO_InitStruct.Pull  = GPIO_NOPULL;    // GPIO_PULLDOWN;
-    GPIO_InitStruct.Speed = GPIO_SPEED_LOW;
-    GPIO_InitStruct.Alternate = 0;
-    HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+    GPIO_InitStruct.Pull  = GPIO_NOPULL;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+    HAL_GPIO_Init(RESET_WINC_GPIO_Port, &GPIO_InitStruct);
+    HAL_GPIO_WritePin(RESET_WINC_GPIO_Port, RESET_WINC_Pin, GPIO_PIN_RESET);
 
-    GPIO_InitStruct.Pin   = CONF_WINC_PIN_CHIP_ENABLE;
-	HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+    /* ---- CHIP ENABLE ---- */
+    GPIO_InitStruct.Pin = CHIP_EN_WINC_Pin;
+    /* same Mode/Pull/Speed as above */
+    HAL_GPIO_Init(CHIP_EN_WINC_GPIO_Port, &GPIO_InitStruct);
+    HAL_GPIO_WritePin(CHIP_EN_WINC_GPIO_Port, CHIP_EN_WINC_Pin, GPIO_PIN_RESET);
 
-    GPIO_InitStruct.Pin   = CONF_WINC_PIN_WAKE;
-    HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
-
-    GPIO_InitStruct.Pin   = CONF_WINC_PIN_POWER_ENABLE;
-    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
-
-    GPIO_InitStruct.Pin   = CONF_WINC_PIN_LEVEL_SHIFTER_ENABLE;
-    HAL_GPIO_Init(CONF_WINC_PORT_LEVEL_SHIFTER_ENABLE, &GPIO_InitStruct);
-    
-    /* Set INIT value */
-    HAL_GPIO_WritePin(GPIOA,CONF_WINC_PIN_POWER_ENABLE,GPIO_PIN_RESET);
-    HAL_GPIO_WritePin(CONF_WINC_PORT_LEVEL_SHIFTER_ENABLE,CONF_WINC_PIN_LEVEL_SHIFTER_ENABLE,GPIO_PIN_SET);
-    HAL_GPIO_WritePin(GPIOA,CONF_WINC_PIN_CHIP_ENABLE,GPIO_PIN_RESET);
-    HAL_GPIO_WritePin(GPIOC,CONF_WINC_PIN_RESET,GPIO_PIN_RESET);
-
+    /* perform a hardware reset pulse */
+    HAL_Delay(50);
+    HAL_GPIO_WritePin(CHIP_EN_WINC_GPIO_Port, CHIP_EN_WINC_Pin, GPIO_PIN_SET);
+    HAL_Delay(50);
+    HAL_GPIO_WritePin(RESET_WINC_GPIO_Port, RESET_WINC_Pin, GPIO_PIN_SET);
+    HAL_Delay(100);
 }
 
 /*

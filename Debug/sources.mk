@@ -30,4 +30,10 @@ Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 \
 Middlewares/Third_Party/FreeRTOS/Source \
 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM33_NTZ/non_secure \
 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang \
+winc1500/bsp/source \
+winc1500/bus_wrapper/source \
+winc1500/common/source \
+winc1500/driver/source \
+winc1500/socket/source \
+winc1500/spi_flash/source \
 

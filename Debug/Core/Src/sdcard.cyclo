@@ -1,3 +1,0 @@
-../Core/Src/sdcard.c:10:9:SD_Init	1
-../Core/Src/sdcard.c:16:9:SD_WriteFile	2
-../Core/Src/sdcard.c:29:9:SD_AppendLog	3

@@ -65,6 +65,7 @@
 /*!<
 *    Void Pointer to '0' in case of NULL is not defined.
 */
+#define NM_EDGE_INTERRUPT
 
 
 #define BSP_MIN(x,y) ((x)>(y)?(y):(x))

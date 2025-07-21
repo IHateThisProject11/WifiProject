@@ -1,0 +1,8 @@
+../winc1500/driver/source/nmdrv.c:54:7:nm_get_firmware_info	32	static
+../winc1500/driver/source/nmdrv.c:97:7:nm_get_firmware_full_info	40	static
+../winc1500/driver/source/nmdrv.c:160:7:nm_get_ota_firmware_info	40	static
+../winc1500/driver/source/nmdrv.c:229:7:nm_drv_init_download_mode	16	static
+../winc1500/driver/source/nmdrv.c:262:7:nm_drv_init_hold	16	static
+../winc1500/driver/source/nmdrv.c:304:7:nm_drv_init_start	24	static
+../winc1500/driver/source/nmdrv.c:358:7:nm_drv_init	24	static
+../winc1500/driver/source/nmdrv.c:377:7:nm_drv_deinit	24	static

@@ -1,0 +1,14 @@
+../winc1500/driver/source/m2m_ota.c:82:13:m2m_ota_cb	20
+../winc1500/driver/source/m2m_ota.c:171:16:m2m_ota_init	3
+../winc1500/driver/source/m2m_ota.c:198:16:m2m_ota_notif_set_url	1
+../winc1500/driver/source/m2m_ota.c:215:16:m2m_ota_notif_check_for_update	1
+../winc1500/driver/source/m2m_ota.c:229:15:m2m_ota_notif_sched	1
+../winc1500/driver/source/m2m_ota.c:243:15:m2m_ota_start_update	1
+../winc1500/driver/source/m2m_ota.c:259:15:m2m_ota_rollback	1
+../winc1500/driver/source/m2m_ota.c:271:15:m2m_ota_abort	1
+../winc1500/driver/source/m2m_ota.c:283:15:m2m_ota_switch_firmware	1
+../winc1500/driver/source/m2m_ota.c:295:15:m2m_ota_get_firmware_version	2
+../winc1500/driver/source/m2m_ota.c:369:15:m2m_ota_host_file_get	5
+../winc1500/driver/source/m2m_ota.c:415:15:m2m_ota_host_file_read_hif	5
+../winc1500/driver/source/m2m_ota.c:449:15:m2m_ota_host_file_read_spi	12
+../winc1500/driver/source/m2m_ota.c:506:15:m2m_ota_host_file_erase	3
