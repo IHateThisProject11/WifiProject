@@ -29,6 +29,8 @@
 #include <time.h>
 #include <sys/time.h>
 #include <sys/times.h>
+#include "stm32h5xx_hal.h"
+extern UART_HandleTypeDef huart2;
 
 
 /* Variables */
@@ -174,3 +176,6 @@ int _execve(char *name, char **argv, char **env)
   errno = ENOMEM;
   return -1;
 }
+
+
+
