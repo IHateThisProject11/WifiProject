@@ -1,0 +1,5 @@
+../Core/Src/screen.c:7:13:_sendCmd	1
+../Core/Src/screen.c:15:6:Screen_Init	1
+../Core/Src/screen.c:21:6:Screen_SetPage	1
+../Core/Src/screen.c:28:6:Screen_ShowImage	1
+../Core/Src/screen.c:35:6:Screen_UpdateNumber	1
