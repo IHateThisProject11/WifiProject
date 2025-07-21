@@ -5,4 +5,4 @@
 ../winc1500/driver/source/nmdrv.c:262:7:nm_drv_init_hold	2
 ../winc1500/driver/source/nmdrv.c:304:7:nm_drv_init_start	9
 ../winc1500/driver/source/nmdrv.c:358:7:nm_drv_init	2
-../winc1500/driver/source/nmdrv.c:377:7:nm_drv_deinit	3
+../winc1500/driver/source/nmdrv.c:377:7:nm_drv_deinit	4

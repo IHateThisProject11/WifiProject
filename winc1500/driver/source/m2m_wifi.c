@@ -36,6 +36,8 @@
 #include "driver/source/m2m_hif.h"
 #include "driver/source/nmasic.h"
 #include <string.h>
+#include <stdlib.h>
+
 
 /**
  * \defgroup winc1500_group WINC1500 (Wi-Fi)

@@ -160,7 +160,8 @@ extern "C" {
  *                  Destination buffer.
  * @return      None
  */
-NMI_API void m2m_memcpy(uint8 *pDst, uint8 *pSrc, uint32 sz);
+//NMI_API void m2m_memcpy(uint8 *pDst, uint8 *pSrc, uint32 sz);
+NMI_API void m2m_memcpy(uint8 *pDst,  uint8 *pSrc, uint32 sz);
 
 /*!
  * @ingroup     COMMONAPI
