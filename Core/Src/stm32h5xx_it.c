@@ -20,8 +20,11 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "stm32h5xx_it.h"
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include <stdio.h>   // make sure your UART‐printf is up by now!
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -85,11 +88,22 @@ void NMI_Handler(void)
 void HardFault_Handler(void)
 {
   /* USER CODE BEGIN HardFault_IRQn 0 */
+	uint32_t hfsr  = SCB->HFSR;   // hard fault status
+	    uint32_t cfsr  = SCB->CFSR;   // configurable fault status
+	    uint32_t mmfar = SCB->MMFAR;  // mem manage fault address
+	    uint32_t bfar  = SCB->BFAR;   // bus fault address
 
+	    printf("\r\n*** HARDFAULT! ***\r\n");
+	    printf(" HFSR  = 0x%08lX\r\n", hfsr);
+	    printf(" CFSR  = 0x%08lX\r\n", cfsr);
+	    printf(" MMFAR = 0x%08lX\r\n", mmfar);
+	    printf(" BFAR  = 0x%08lX\r\n", bfar);
   /* USER CODE END HardFault_IRQn 0 */
   while (1)
   {
     /* USER CODE BEGIN W1_HardFault_IRQn 0 */
+      __NOP();  // you can blink an LED here if you want
+
     /* USER CODE END W1_HardFault_IRQn 0 */
   }
 }

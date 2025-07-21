@@ -19,6 +19,8 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "app_freertos.h"
+#include "WifiTask.h"
+
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -64,6 +66,18 @@ const osThreadAttr_t defaultTask_attributes = {
   */
 void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN Init */
+	  // … existing threads, mutexes, etc …
+
+	  /* Create WIFI task */
+	  const osThreadAttr_t wifiTask_attributes = {
+	    .name = "wifiTask",
+	    .priority = (osPriority_t) osPriorityNormal,
+	    .stack_size = 512
+	  };
+	  osThreadNew(WifiTask, NULL, &wifiTask_attributes);
+
+	  // … any other setup …
+
 
   /* USER CODE END Init */
 
