@@ -1,12 +1,4 @@
-winc1500/spi_flash/source/spi_flash.o: \
- ../winc1500/spi_flash/source/spi_flash.c \
- C:/Users/Jacob\ S/OneDrive\ -\ Western\ Washington\ University/Desktop/Senior\ Project\ Documentation/STM-32-Code/WifiDataLogger/winc1500/spi_flash/include/spi_flash.h \
- C:/Users/Jacob\ S/OneDrive\ -\ Western\ Washington\ University/Desktop/Senior\ Project\ Documentation/STM-32-Code/WifiDataLogger/winc1500/common/include/nm_common.h \
- C:/Users/Jacob\ S/OneDrive\ -\ Western\ Washington\ University/Desktop/Senior\ Project\ Documentation/STM-32-Code/WifiDataLogger/winc1500/bsp/include/nm_bsp.h \
- C:/Users/Jacob\ S/OneDrive\ -\ Western\ Washington\ University/Desktop/Senior\ Project\ Documentation/STM-32-Code/WifiDataLogger/winc1500/common/include/nm_debug.h \
- C:/Users/Jacob\ S/OneDrive\ -\ Western\ Washington\ University/Desktop/Senior\ Project\ Documentation/STM-32-Code/WifiDataLogger/winc1500/bsp/include/nm_bsp_internal.h \
- C:/Users/Jacob\ S/OneDrive\ -\ Western\ Washington\ University/Desktop/Senior\ Project\ Documentation/STM-32-Code/WifiDataLogger/winc1500/bus_wrapper/include/nm_bus_wrapper.h \
- C:/Users/Jacob\ S/OneDrive\ -\ Western\ Washington\ University/Desktop/Senior\ Project\ Documentation/STM-32-Code/WifiDataLogger/winc1500/config/conf_winc.h \
+Core/Src/stm32h5xx_it.o: ../Core/Src/stm32h5xx_it.c ../Core/Inc/main.h \
  ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal.h \
  ../Core/Inc/stm32h5xx_hal_conf.h \
  ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_rcc.h \
@@ -35,18 +27,21 @@ winc1500/spi_flash/source/spi_flash.o: \
  ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_uart.h \
  ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_uart_ex.h \
  ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_exti.h \
- ../Core/Inc/main.h ../Drivers/BSP/STM32H5xx_Nucleo/stm32h5xx_nucleo.h \
+ ../Drivers/BSP/STM32H5xx_Nucleo/stm32h5xx_nucleo.h \
  ../Core/Inc/stm32h5xx_nucleo_conf.h \
  ../Drivers/BSP/STM32H5xx_Nucleo/stm32h5xx_nucleo_errno.h \
- C:/Users/Jacob\ S/OneDrive\ -\ Western\ Washington\ University/Desktop/Senior\ Project\ Documentation/STM-32-Code/WifiDataLogger/winc1500/driver/source/nmbus.h \
- C:/Users/Jacob\ S/OneDrive\ -\ Western\ Washington\ University/Desktop/Senior\ Project\ Documentation/STM-32-Code/WifiDataLogger/winc1500/driver/source/nmasic.h
-C:/Users/Jacob\ S/OneDrive\ -\ Western\ Washington\ University/Desktop/Senior\ Project\ Documentation/STM-32-Code/WifiDataLogger/winc1500/spi_flash/include/spi_flash.h:
-C:/Users/Jacob\ S/OneDrive\ -\ Western\ Washington\ University/Desktop/Senior\ Project\ Documentation/STM-32-Code/WifiDataLogger/winc1500/common/include/nm_common.h:
-C:/Users/Jacob\ S/OneDrive\ -\ Western\ Washington\ University/Desktop/Senior\ Project\ Documentation/STM-32-Code/WifiDataLogger/winc1500/bsp/include/nm_bsp.h:
-C:/Users/Jacob\ S/OneDrive\ -\ Western\ Washington\ University/Desktop/Senior\ Project\ Documentation/STM-32-Code/WifiDataLogger/winc1500/common/include/nm_debug.h:
-C:/Users/Jacob\ S/OneDrive\ -\ Western\ Washington\ University/Desktop/Senior\ Project\ Documentation/STM-32-Code/WifiDataLogger/winc1500/bsp/include/nm_bsp_internal.h:
-C:/Users/Jacob\ S/OneDrive\ -\ Western\ Washington\ University/Desktop/Senior\ Project\ Documentation/STM-32-Code/WifiDataLogger/winc1500/bus_wrapper/include/nm_bus_wrapper.h:
-C:/Users/Jacob\ S/OneDrive\ -\ Western\ Washington\ University/Desktop/Senior\ Project\ Documentation/STM-32-Code/WifiDataLogger/winc1500/config/conf_winc.h:
+ ../Core/Inc/stm32h5xx_it.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
+ ../Core/Inc/FreeRTOSConfig.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM33_NTZ/non_secure/portmacro.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM33_NTZ/non_secure/portmacrocommon.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
+../Core/Inc/main.h:
 ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal.h:
 ../Core/Inc/stm32h5xx_hal_conf.h:
 ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_rcc.h:
@@ -75,9 +70,17 @@ C:/Users/Jacob\ S/OneDrive\ -\ Western\ Washington\ University/Desktop/Senior\ P
 ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_uart.h:
 ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_uart_ex.h:
 ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal_exti.h:
-../Core/Inc/main.h:
 ../Drivers/BSP/STM32H5xx_Nucleo/stm32h5xx_nucleo.h:
 ../Core/Inc/stm32h5xx_nucleo_conf.h:
 ../Drivers/BSP/STM32H5xx_Nucleo/stm32h5xx_nucleo_errno.h:
-C:/Users/Jacob\ S/OneDrive\ -\ Western\ Washington\ University/Desktop/Senior\ Project\ Documentation/STM-32-Code/WifiDataLogger/winc1500/driver/source/nmbus.h:
-C:/Users/Jacob\ S/OneDrive\ -\ Western\ Washington\ University/Desktop/Senior\ Project\ Documentation/STM-32-Code/WifiDataLogger/winc1500/driver/source/nmasic.h:
+../Core/Inc/stm32h5xx_it.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
+../Core/Inc/FreeRTOSConfig.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h:
+../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM33_NTZ/non_secure/portmacro.h:
+../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM33_NTZ/non_secure/portmacrocommon.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/list.h:

@@ -61,6 +61,40 @@
 #define NM_BUS_IOCTL_RW			((uint8)3)	/*!< Read/Write at the same time ==> SPI only. Parameter:tstrNmSpiRw */
 
 #define NM_BUS_IOCTL_WR_RESTART	((uint8)4)				/*!< Write buffer then made restart condition then read ==> I2C only. parameter:tstrNmI2cSpecial */
+
+#ifndef NM_BUS_WRAPPER_STM32H5_H_
+#define NM_BUS_WRAPPER_STM32H5_H_
+
+#include "conf_winc.h"    /* for CONF_WINC_SPI_CS_PORT, CONF_WINC_SPI_CS_PIN */
+#include "stm32h5xx_hal.h"
+
+/* Use SPI1 on PA5/6/7 */
+#define SPI_WIFI                   SPI1
+#define SPI_WIFI_CLK_ENABLE()      __HAL_RCC_SPI1_CLK_ENABLE()
+#define SPI_WIFI_CLK_DISABLE()     __HAL_RCC_SPI1_CLK_DISABLE()
+
+/* chip‐select */
+#define SPI_WIFI_CS_GPIO_PORT      CONF_WINC_SPI_CS_PORT
+#define SPI_WIFI_CS_PIN            CONF_WINC_SPI_CS_PIN
+
+/* HW NSS is not used: we drive CS manually */
+
+/* data lines all on GPIOA */
+#define SPI_WIFI_SCK_GPIO_PORT     GPIOA
+#define SPI_WIFI_SCK_PIN           GPIO_PIN_5
+#define SPI_WIFI_MISO_GPIO_PORT    GPIOA
+#define SPI_WIFI_MISO_PIN          GPIO_PIN_6
+#define SPI_WIFI_MOSI_GPIO_PORT    GPIOA
+#define SPI_WIFI_MOSI_PIN          GPIO_PIN_7
+
+/* AF mapping for SPI1 on PA5/6/7 */
+#define SPI3_WIFI_AF               GPIO_AF5_SPI1
+
+/* HAL port speed alias */
+#define GPIO_SPEED_HIGH            GPIO_SPEED_FREQ_HIGH
+
+#endif /* NM_BUS_WRAPPER_STM32H5_H_ */
+
 /**
 *	@struct	tstrNmBusCapabilities
 *	@brief	Structure holding bus capabilities information

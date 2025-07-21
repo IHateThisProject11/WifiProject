@@ -51,6 +51,8 @@
 #include "common/include/nm_common.h"
 #include "bus_wrapper/include/nm_bus_wrapper.h"
 #include "conf_winc.h"
+#include "nm_bus_wrapper.h"
+
 
 #define NM_BUS_MAX_TRX_SZ	256
 
@@ -141,6 +143,8 @@ static sint8 spi_rw(uint8* pu8Mosi, uint8* pu8Miso, uint16 u16Sz)
 			pu8Mosi++;
 	}
 
+
+
 //	while (!spi_is_write_complete(&master))
 //		;
 
@@ -186,6 +190,15 @@ static sint8 spi_rw(uint8* pu8Mosi, uint8* pu8Miso, uint16 u16Sz)
 }
 #endif
 #endif //CONF_WINC_USE_SPI
+
+/**
+ * @brief  Expose nm_spi_rw to the WINC1500 driver.
+ */
+sint8 nm_spi_rw(uint8* pu8Mosi, uint8* pu8Miso, uint16 u16Sz)
+{
+    return spi_rw(pu8Mosi, pu8Miso, u16Sz);
+}
+
 
 void nm_bus_wifi_spi_init(SPI_HandleTypeDef *hspi)
 {
