@@ -44,7 +44,8 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  C:/Users/Jacob\ S/OneDrive\ -\ Western\ Washington\ University/Desktop/Senior\ Project\ Documentation/STM-32-Code/WifiDataLogger/winc1500/driver/include/m2m_wifi.h \
  C:/Users/Jacob\ S/OneDrive\ -\ Western\ Washington\ University/Desktop/Senior\ Project\ Documentation/STM-32-Code/WifiDataLogger/winc1500/common/include/compiler.h \
  ../Drivers/CMSIS/Include/cmsis_compiler.h \
- C:/Users/Jacob\ S/OneDrive\ -\ Western\ Washington\ University/Desktop/Senior\ Project\ Documentation/STM-32-Code/WifiDataLogger/winc1500/driver/source/nmdrv.h
+ C:/Users/Jacob\ S/OneDrive\ -\ Western\ Washington\ University/Desktop/Senior\ Project\ Documentation/STM-32-Code/WifiDataLogger/winc1500/driver/source/nmdrv.h \
+ ../Core/Inc/WifiTask.h
 ../Core/Inc/main.h:
 ../Drivers/STM32H5xx_HAL_Driver/Inc/stm32h5xx_hal.h:
 ../Core/Inc/stm32h5xx_hal_conf.h:
@@ -92,3 +93,4 @@ C:/Users/Jacob\ S/OneDrive\ -\ Western\ Washington\ University/Desktop/Senior\ P
 C:/Users/Jacob\ S/OneDrive\ -\ Western\ Washington\ University/Desktop/Senior\ Project\ Documentation/STM-32-Code/WifiDataLogger/winc1500/common/include/compiler.h:
 ../Drivers/CMSIS/Include/cmsis_compiler.h:
 C:/Users/Jacob\ S/OneDrive\ -\ Western\ Washington\ University/Desktop/Senior\ Project\ Documentation/STM-32-Code/WifiDataLogger/winc1500/driver/source/nmdrv.h:
+../Core/Inc/WifiTask.h:

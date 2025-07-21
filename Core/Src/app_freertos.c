@@ -22,6 +22,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "WifiTask.h"    // <-- pull in the WifiTask prototype
 
 /* USER CODE END Includes */
 

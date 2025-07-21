@@ -84,27 +84,26 @@ void NMI_Handler(void)
 /**
   * @brief This function handles Hard fault interrupt.
   */
+void HardFault_Handler(void) __attribute__((naked));
 void HardFault_Handler(void)
 {
-  /* USER CODE BEGIN HardFault_IRQn 0 */
-	uint32_t hfsr  = SCB->HFSR;   // hard fault status
-	    uint32_t cfsr  = SCB->CFSR;   // configurable fault status
-	    uint32_t mmfar = SCB->MMFAR;  // mem manage fault address
-	    uint32_t bfar  = SCB->BFAR;   // bus fault address
+    __asm volatile(
+        "TST lr, #4          \n"  // which stack pointer?
+        "ITE EQ              \n"
+        "MRSEQ r0, MSP       \n"
+        "MRSNE r0, PSP       \n"
+        "B hard_fault_c      \n"
+    );
+}
 
-	    printf("\r\n*** HARDFAULT! ***\r\n");
-	    printf(" HFSR  = 0x%08lX\r\n", hfsr);
-	    printf(" CFSR  = 0x%08lX\r\n", cfsr);
-	    printf(" MMFAR = 0x%08lX\r\n", mmfar);
-	    printf(" BFAR  = 0x%08lX\r\n", bfar);
-  /* USER CODE END HardFault_IRQn 0 */
-  while (1)
-  {
-    /* USER CODE BEGIN W1_HardFault_IRQn 0 */
-      __NOP();  // you can blink an LED here if you want
-
-    /* USER CODE END W1_HardFault_IRQn 0 */
-  }
+void hard_fault_c(uint32_t *regs)
+{
+    uint32_t stacked_pc = regs[6];
+    printf("\r\n*** HARDFAULT @ 0x%08lX ***\r\n", stacked_pc);
+    /* Optionally print other regs:
+       printf(" LR = 0x%08lX  PSR = 0x%08lX\r\n", regs[5], regs[7]);
+    */
+    while (1) { __NOP(); }
 }
 
 /**
