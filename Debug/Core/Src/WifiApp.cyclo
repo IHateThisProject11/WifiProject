@@ -1,0 +1,4 @@
+../Core/Src/WifiApp.c:17:6:wifi_cb	5
+../Core/Src/WifiApp.c:91:6:WifiApp_InitAP	3
+../Core/Src/WifiApp.c:122:6:EXTI4_IRQHandler	4
+../Core/Src/WifiApp.c:134:6:HAL_GPIO_EXTI_Callback	2

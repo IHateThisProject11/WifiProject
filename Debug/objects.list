@@ -40,7 +40,7 @@
 "./Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM33_NTZ/non_secure/portasm.o"
 "./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o"
 "./winc1500/bsp/source/nm_bsp_stm32h5.o"
-"./winc1500/bus_wrapper/source/nm_bus_wrapper_stm32f429.o"
+"./winc1500/bus_wrapper/source/nm_bus_wrapper_stm32h5.o"
 "./winc1500/common/source/nm_common.o"
 "./winc1500/driver/source/m2m_ate_mode.o"
 "./winc1500/driver/source/m2m_crypto.o"

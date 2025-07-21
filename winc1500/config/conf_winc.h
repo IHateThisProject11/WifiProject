@@ -49,6 +49,32 @@
 #define CONF_WINC_IRQ_PIN           GPIO_PIN_0
 #define CONF_WINC_IRQ_EXTI_IRQn     EXTI0_IRQn      /* matches PB0 */
 
+/* ----------------------------------------------------------------------------
+ * stubs & aliases for nm_bsp_stm32h5.c
+ * ----------------------------------------------------------------------------
+ */
+
+/* power-enable (nm_bsp_deinit / init) */
+#define CONF_WINC_PIN_POWER_ENABLE         GPIO_PIN_8   /* e.g. PA8 or whatever */
+#define CONF_WINC_PORT_POWER_ENABLE        GPIOA        /* nm_bsp_stm32h5 hard-codes GPIOA here */
+
+/* level-shifter enable (if your board has one) */
+#define CONF_WINC_PIN_LEVEL_SHIFTER_ENABLE GPIO_PIN_9   /* e.g. PC9 */
+#define CONF_WINC_PORT_LEVEL_SHIFTER_ENABLE GPIOC
+
+/* chip-enable alias (nm_bsp wants these names) */
+#define CONF_WINC_PIN_CHIP_ENABLE          CONF_WINC_CHIP_EN_PIN
+#define CONF_WINC_PORT_CHIP_ENABLE         CONF_WINC_CHIP_EN_PORT
+
+/* reset alias (nm_bsp may refer to these directly) */
+#define CONF_WINC_PIN_RESET                CONF_WINC_RESET_PIN
+#define CONF_WINC_PORT_RESET               CONF_WINC_RESET_PORT
+
+/* interrupt alias (nm_bsp_register_isr / interrupt_ctrl) */
+#define CONF_WINC_SPI_INT_PIN              CONF_WINC_IRQ_PIN
+#define CONF_WINC_SPI_INT_PORT             CONF_WINC_IRQ_PORT
+#define CONF_WINC_EXTI_IRQN                CONF_WINC_IRQ_EXTI_IRQn
+
 /* --------------------------------------------------------------------------
  * Debug output
  * -------------------------------------------------------------------------- */

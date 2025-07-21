@@ -44,8 +44,9 @@
 #include <string.h>
 #include <stdint.h>     /* Included for uint_t */
 
-#include "stm32f4xx_hal.h"
-#include "stm32f4xx_hal_spi.h"
+#include "stm32h5xx_hal.h"
+#include "stm32h5xx_hal_spi.h"
+
 #include "bsp/include/nm_bsp.h"
 #include "common/include/nm_common.h"
 #include "bus_wrapper/include/nm_bus_wrapper.h"
