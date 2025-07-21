@@ -48,6 +48,7 @@
 
 
 
+
 /*
  *	@fn		init_chip_pins
  *	@brief	Initialize reset, chip enable and wake pin

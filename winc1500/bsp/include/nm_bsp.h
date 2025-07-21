@@ -54,6 +54,14 @@
 *        Attribute used to define memory section to map Functions in host memory.
 */
 #define CONST const
+#include <stdint.h>
+
+typedef   int8_t    sint8;
+typedef  int16_t   sint16;
+typedef  int32_t   sint32;
+typedef  uint8_t    uint8;
+typedef uint16_t   uint16;
+typedef uint32_t   uint32;
 
 /*!<
 *     Used for code portability.
@@ -65,7 +73,9 @@
 /*!<
 *    Void Pointer to '0' in case of NULL is not defined.
 */
-#define NM_EDGE_INTERRUPT
+#ifndef NM_EDGE_INTERRUPT
+#define NM_EDGE_INTERRUPT    (1)
+#endif
 
 
 #define BSP_MIN(x,y) ((x)>(y)?(y):(x))
@@ -74,6 +84,7 @@
 */
 
  //@}
+sint8 nm_spi_rw(uint8* pu8Mosi, uint8* pu8Miso, uint16 u16Sz);
 
 /**@defgroup  DataT  DataTypes
  * @ingroup nm_bsp
