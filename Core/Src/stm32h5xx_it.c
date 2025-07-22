@@ -84,26 +84,37 @@ void NMI_Handler(void)
 /**
   * @brief This function handles Hard fault interrupt.
   */
-void HardFault_Handler(void) __attribute__((naked));
+/* in stm32h5xx_it.c */
+
+__attribute__((naked))
 void HardFault_Handler(void)
 {
     __asm volatile(
-        "TST lr, #4          \n"  // which stack pointer?
-        "ITE EQ              \n"
-        "MRSEQ r0, MSP       \n"
-        "MRSNE r0, PSP       \n"
-        "B hard_fault_c      \n"
+        "    tst lr, #4                \n"  // see which stack pointer we stacked on
+        "    ite eq                    \n"
+        "    mrseq r0, msp             \n"  // if ( (lr & 4)==0 ) r0 = MSP else r0 = PSP
+        "    mrsne r0, psp             \n"
+        "    b HardFault_Handler_C     \n"
     );
 }
 
-void hard_fault_c(uint32_t *regs)
+void HardFault_Handler_C(uint32_t *stacked_regs)
 {
-    uint32_t stacked_pc = regs[6];
-    printf("\r\n*** HARDFAULT @ 0x%08lX ***\r\n", stacked_pc);
-    /* Optionally print other regs:
-       printf(" LR = 0x%08lX  PSR = 0x%08lX\r\n", regs[5], regs[7]);
-    */
-    while (1) { __NOP(); }
+    uint32_t r0  = stacked_regs[0];
+    uint32_t r1  = stacked_regs[1];
+    uint32_t r2  = stacked_regs[2];
+    uint32_t r3  = stacked_regs[3];
+    uint32_t r12 = stacked_regs[4];
+    uint32_t lr  = stacked_regs[5];
+    uint32_t pc  = stacked_regs[6];
+    uint32_t psr = stacked_regs[7];
+
+    printf("\r\n*** HARDFAULT! ***\r\n");
+    printf("  PC = 0x%08lX  LR = 0x%08lX\r\n", pc, lr);
+    printf("  r0 = 0x%08lX  r1 = 0x%08lX  r2 = 0x%08lX  r3 = 0x%08lX\r\n",
+           r0, r1, r2, r3);
+    printf("  r12= 0x%08lX  psr= 0x%08lX\r\n", r12, psr);
+    while (1) { }
 }
 
 /**

@@ -26,11 +26,13 @@
 #include "WifiApp.h"
 #include "WifiTask.h"    // <-- pull in the WifiTask prototype
 
-
+#include <stdio.h>
+#include <inttypes.h>  // for PRIuPTR
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
+/* at the top of main.c, before any functions */
 
 /* USER CODE END PTD */
 
@@ -83,6 +85,10 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
+	/* USER CODE BEGIN 0 */
+	static RCC_OscInitTypeDef RCC_OscInitStruct  __attribute__((aligned(4)));
+	static RCC_ClkInitTypeDef RCC_ClkInitStruct  __attribute__((aligned(4)));
+	/* USER CODE END 0 */
 
   /* USER CODE END 1 */
 
@@ -179,6 +185,26 @@ void SystemClock_Config(void)
 {
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+  // 1) Print their addresses & check alignment
+  uintptr_t addrOsc = (uintptr_t)&RCC_OscInitStruct;
+  uintptr_t addrClk = (uintptr_t)&RCC_ClkInitStruct;
+  printf("OscInitStruct @ 0x%" PRIxPTR, addrOsc);
+  if (addrOsc & 0x3) printf("  **unaligned**\r\n"); else printf("  OK\r\n");
+  printf("ClkInitStruct @ 0x%" PRIxPTR, addrClk);
+  if (addrClk & 0x3) printf("  **unaligned**\r\n"); else printf("  OK\r\n");
+
+  // 2) Trace each HAL call
+  printf("-> HAL_RCC_OscConfig\r\n");
+  if ( HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK ) {
+    printf("   OscConfig FAILED\r\n");
+  } else {
+    printf("   OscConfig OK\r\n");
+  }
+
+  printf("-> HAL_RCCEx_PeriphCLKConfig\r\n");
+  HAL_RCCEx_PeriphCLKConfig(&RCC_ClkInitStruct);
+  printf("   Returned from PeriphCLKConfig\r\n");
+  /* USER CODE END SysInit */
 
   /** Configure the main internal regulator output voltage
   */

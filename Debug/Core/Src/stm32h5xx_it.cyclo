@@ -1,9 +1,9 @@
 ../Core/Src/stm32h5xx_it.c:72:6:NMI_Handler	1
-../Core/Src/stm32h5xx_it.c:88:6:HardFault_Handler	1
-../Core/Src/stm32h5xx_it.c:99:6:hard_fault_c	1
-../Core/Src/stm32h5xx_it.c:112:6:MemManage_Handler	1
-../Core/Src/stm32h5xx_it.c:127:6:BusFault_Handler	1
-../Core/Src/stm32h5xx_it.c:142:6:UsageFault_Handler	1
-../Core/Src/stm32h5xx_it.c:157:6:DebugMon_Handler	1
-../Core/Src/stm32h5xx_it.c:177:6:EXTI13_IRQHandler	1
-../Core/Src/stm32h5xx_it.c:191:6:TIM1_UP_IRQHandler	1
+../Core/Src/stm32h5xx_it.c:90:6:HardFault_Handler	1
+../Core/Src/stm32h5xx_it.c:101:6:HardFault_Handler_C	1
+../Core/Src/stm32h5xx_it.c:123:6:MemManage_Handler	1
+../Core/Src/stm32h5xx_it.c:138:6:BusFault_Handler	1
+../Core/Src/stm32h5xx_it.c:153:6:UsageFault_Handler	1
+../Core/Src/stm32h5xx_it.c:168:6:DebugMon_Handler	1
+../Core/Src/stm32h5xx_it.c:188:6:EXTI13_IRQHandler	1
+../Core/Src/stm32h5xx_it.c:202:6:TIM1_UP_IRQHandler	1
