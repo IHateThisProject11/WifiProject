@@ -1,5 +1,0 @@
-../Core/Src/screen.c:7:13:_sendCmd	104	static
-../Core/Src/screen.c:15:6:Screen_Init	16	static
-../Core/Src/screen.c:21:6:Screen_SetPage	32	static
-../Core/Src/screen.c:28:6:Screen_ShowImage	32	static
-../Core/Src/screen.c:35:6:Screen_UpdateNumber	56	static
